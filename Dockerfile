@@ -11,6 +11,7 @@ RUN apt update -y  && \
     chmod 755 /usr/bin/rclone && \
     apt install aria2 -y && \
     apt install wget -y && \
+    apt install procps -y && \
     apt install pip -y && \
     pip install jupyter && \
     pip install voila && \
