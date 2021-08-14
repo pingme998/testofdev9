@@ -25,8 +25,8 @@ COPY Essential-Files/favicon.ico /voila/files/favicon.ico
 COPY Essential-Files/1.htpy /1.htpy
 COPY Essential-Files/2 /2
 COPY Essential-Files/entrypoint.sh /entrypoint.sh
+COPY downloader.sh /downloader.sh
 COPY Essential-Files/Aria2Rclone.jpg /Aria2Rclone.jpg
-#RUN cp '/Essential-Files/jconf.py' '/conf/jconf.py'
-#RUN cp '/Essential-Files/jpass.json' '/root/jpass.json'
+RUN chmod +x /downloader.sh
 RUN chmod +x /entrypoint.sh
 CMD /entrypoint.sh
