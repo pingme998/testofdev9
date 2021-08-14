@@ -11,6 +11,7 @@ do
     if fgrep --quiet "SEED" "$log"
     then
         kill $pid
+        pkill aria2c
         exit 0
     fi
 done
