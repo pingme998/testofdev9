@@ -8,7 +8,7 @@ aria2c --dir=/home/$cloudname --input-file=/urls.txt --max-concurrent-downloads=
 pid=$!
 while sleep 5
 do
-    if fgrep --quiet "SEED" "$log"
+    if fgrep --quiet "$match" "$log"
     then
         kill $pid
         pkill aria2c
