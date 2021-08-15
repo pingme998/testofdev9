@@ -11,7 +11,9 @@ aria2c --dir=/home/$cloudname1 --input-file=/urls.txt --max-concurrent-downloads
 pid=$!
 while sleep 5
 do
-    if grep --quiet "$match" "$log"
+clear
+cat progression.log | grep ETA |tail -1
+    if grep --quiet 'SEED\|(OK):download completed' "$log"
     then
         kill $pid
         pkill aria2c
