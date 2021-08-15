@@ -18,3 +18,5 @@ cat /progression.log | grep ETA |tail -1
         exit 0
     fi
 done
+
+while sleep 5; do clear; cat /progression.log | grep ETA |tail -1;     if grep --quiet 'SEED\|(OK):download completed' "$log";     then         pkill aria2c;         exit 0;     fi; done
