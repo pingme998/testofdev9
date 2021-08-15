@@ -15,7 +15,6 @@ clear
 cat /progression.log | grep ETA |tail -1
     if grep --quiet 'SEED\|(OK):download completed' "$log"
     then
-        kill $pid
         pkill aria2c
         exit 0
     fi
