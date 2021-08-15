@@ -7,7 +7,7 @@ log="progression.log"
 
 match="SEED"
 
-aria2c --dir=/home/$cloudname1 --input-file=/urls.txt --max-concurrent-downloads=1 --connect-timeout=60 --max-connection-per-server=$threats1 --split=$threats1 --min-split-size=1M --human-readable=true --download-result=full --file-allocation=none > "$log" 2>&1 &
+aria2c --dir=/home/$cloudname1 --input-file=/home/$cloudname1/urls.txt --max-concurrent-downloads=1 --connect-timeout=60 --max-connection-per-server=$threats1 --split=$threats1 --min-split-size=1M --human-readable=true --download-result=full --file-allocation=none > "$log" 2>&1 &
 pid=$!
 while sleep 5
 do
