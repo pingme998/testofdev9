@@ -3,7 +3,7 @@ cloudname1=$(cat /cloudvale|sed "s/,/\n/g"|grep value |sed "s/value='//g" |sed "
 threats1=$(cat /threats|sed "s/,/\n/g"|grep value |sed "s/value='//g" |sed "s/')//g")
 mkdir /tmp/$cloudname1
 touch /tmp/$cloudname1/progression.log
-log="progression.log"
+log="/progression.log"
 
 match="SEED"
 
@@ -12,7 +12,7 @@ pid=$!
 while sleep 5
 do
 clear
-cat progression.log | grep ETA |tail -1
+cat /progression.log | grep ETA |tail -1
     if grep --quiet 'SEED\|(OK):download completed' "$log"
     then
         kill $pid
