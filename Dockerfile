@@ -12,6 +12,7 @@ RUN apt update -y  && \
     apt install aria2 -y && \
     apt install wget -y && \
     apt install procps -y && \
+    apt install parallel -y && \
     apt install pip -y && \
     pip install jupyter && \
     pip install voila && \
